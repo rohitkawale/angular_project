@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/rohitkawale/angular_project/issues"
   },
-  "homepage": "https://github.com/rohitkawale/angular_project#readme"
+  "homepage": "https://github.com/rohitkawale/angular_project#readme",
+  "devDependencies": {
+    "gulp-imagemin": "^3.0.1"
+  }
 }
