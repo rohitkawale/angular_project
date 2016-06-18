@@ -2,9 +2,11 @@ var gulp= require('gulp'),
 	uglify=require('gulp-uglify'),
 	sass= require('gulp-ruby-sass'),
 	sass2= require('gulp-sass'),
-	plumber= require('gulp-plumber');
+	//imagemin= require('gulp-imagemin'),
+	plumber= require('gulp-plumber'),
+	prefix= require('gulp-autoprefixer');
 
-gulp.task('default',['scripts','styles','watch']);
+gulp.task('default',['scripts','styles',/*'image',*/'watch']);
 
 
 gulp.task('scripts',function(){
@@ -14,13 +16,19 @@ gulp.task('scripts',function(){
 	.pipe(gulp.dest('build/js/'));
 });
 
+/*gulp.task('image',function(){
+
+	gulp.src('Src/images/*')
+	.pipe(imagemin())
+	.pipe(gulp.dest('build/images'));
+
+});*/
+
 gulp.task('styles',function(){
 	console.log("ji");
 	gulp.src('Src/scss/*.scss')
-	.pipe(plumber())
-	.pipe(sass2({
-		style:'compressed'
-	}))
+	.pipe(sass2())
+	.on('error',console.error.bind(console))
 	.pipe(gulp.dest('build/css'));
 	
 });
@@ -28,4 +36,5 @@ gulp.task('styles',function(){
 
 gulp.task('watch',function(){
 	gulp.watch('Src/js/*.js',['scripts']);
+	gulp.watch('Src/scss/*.scss',['styles']);
 });
