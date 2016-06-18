@@ -1,1 +1,0 @@
-var app=angular.module("MyApp",[]);app.filter("date_filter",function(){return function(e){var n=new Date(e),r=new Date(n.getTime()+198e5);return r}}),app.controller("MyController",function(){});

@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/rohitkawale/angular_project#readme",
   "devDependencies": {
-    "gulp-imagemin": "^3.0.1"
+    "gulp-imagemin": "^3.0.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-ruby-sass": "^2.0.6",
+    "gulp-sass": "^2.3.2"
   }
 }
